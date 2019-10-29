@@ -1,0 +1,34 @@
+#日志
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  file: /var/log/tomcat/sell/
+#  level:
+#    com.example.sell.SellApplicationTests: info
+#mysql
+
+spring:
+  datasource:
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123456
+    url: jdbc:mysql://192.168.43.78/sell?characterEncoding=utf8&useSSL=false
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.43.78
+    port: 6379
+server:
+  servlet:
+    context-path: /sell
+wechat:
+  mpAppId: wx4ce0052eb763b295
+  myAppSecret: f859f52a055c7d74a9a49c05bf02f3d1
+  mchId: 1409146202
+  mchkey: c945168
+#  证书路径
+  keyPath: /var/weixin_cert/h5.p12
+#  微信支付异步通知地址
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
